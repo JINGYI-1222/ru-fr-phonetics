@@ -1,0 +1,13 @@
+representation,ground_truth,k,ARI,silhouette
+Acoustic,front_back,2,0.4144,0.358
+Acoustic,height,3,0.2655,0.4206
+Whisper_L4,front_back,2,-0.1404,0.748
+Whisper_L4,height,3,0.4622,0.6412
+Whisper_L20,front_back,2,0.0,0.58
+Whisper_L20,height,3,0.0022,0.5515
+XLSR_L4,front_back,2,0.1228,0.3461
+XLSR_L4,height,3,0.0288,0.3381
+XLSR_L12,front_back,2,0.1228,0.2762
+XLSR_L12,height,3,0.0288,0.2645
+XLSR_L20,front_back,2,0.1228,0.3296
+XLSR_L20,height,3,0.0668,0.3251

@@ -1,0 +1,7 @@
+representation,ARI_CV
+Acoustic,0.0018
+Whisper_L4,0.0073
+Whisper_L20,0.0206
+XLSR_L4,0.1525
+XLSR_L12,0.6383
+XLSR_L20,0.1525

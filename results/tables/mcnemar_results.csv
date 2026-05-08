@@ -1,0 +1,6 @@
+neural_rep,L1_acc,L2_acc,mcnemar_p_L1,mcnemar_p_L2
+Whisper_L4,0.325,0.3408,0.0,0.0
+Whisper_L20,0.2733,0.273,0.0,0.0
+XLSR_L4,0.8179,0.804,0.0,0.0
+XLSR_L12,0.866,0.8375,0.0,0.0
+XLSR_L20,0.7934,0.8047,0.0,0.0

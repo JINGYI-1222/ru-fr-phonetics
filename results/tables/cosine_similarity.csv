@@ -1,0 +1,6 @@
+model,within_sim,between_sim,ratio
+Whisper L4,0.8498,0.8325,1.0208
+Whisper L20,0.6539,0.6184,1.0573
+XLS-R L4,0.7144,0.4827,1.4799
+XLS-R L12,0.7258,0.5341,1.3589
+XLS-R L20,0.8645,0.755,1.145

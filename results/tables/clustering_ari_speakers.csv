@@ -1,0 +1,13 @@
+representation,ground_truth,k,ARI
+Acoustic,L1_status,2,0.0852
+Acoustic,gender,2,0.2963
+Whisper_L4,L1_status,2,-0.0245
+Whisper_L4,gender,2,-0.0245
+Whisper_L20,L1_status,2,0.0185
+Whisper_L20,gender,2,0.0185
+XLSR_L4,L1_status,2,0.2963
+XLSR_L4,gender,2,1.0
+XLSR_L12,L1_status,2,0.4391
+XLSR_L12,gender,2,0.182
+XLSR_L20,L1_status,2,0.2963
+XLSR_L20,gender,2,1.0

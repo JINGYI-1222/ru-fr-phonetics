@@ -1,0 +1,96 @@
+stages:
+
+  parse_corpus:
+    cmd: python src/parse_corpus.py
+    deps:
+      - src/parse_corpus.py
+      - data/raw/ru-fr_interference/ru-fr_interference/2/wav_et_textgrids/FRcorp_textgrids_only
+      - data/raw/ru-fr_interference/ru-fr_interference/2/metadata_RUFR.csv
+    params:
+      - params.yaml:
+        - corpus.corpus_dir
+        - corpus.metadata
+    outs:
+      - data/processed/phonemes.csv
+
+  extract_acoustics:
+    cmd: python src/extract_acoustics.py
+    deps:
+      - src/extract_acoustics.py
+      - data/processed/phonemes.csv
+    params:
+      - params.yaml:
+        - acoustics.max_formant_female
+        - acoustics.max_formant_male
+        - acoustics.n_formants
+        - acoustics.window_length
+        - acoustics.time_step
+    outs:
+      - data/processed/features_acoustic.csv
+
+  extract_neural_whisper:
+    cmd: python src/extract_neural_whisper.py
+    deps:
+      - src/extract_neural_whisper.py
+      - data/raw/ru-fr_interference/ru-fr_interference/2/wav_et_textgrids/FRcorp_textgrids_only
+    params:
+      - params.yaml:
+        - whisper.model
+        - whisper.layer_low
+        - whisper.layer_high
+        - whisper.sample_rate
+        - whisper.hop_length
+    outs:
+      - data/processed/features_whisper.npz
+
+  extract_neural_xlsr:
+    cmd: python src/extract_neural_xlsr.py
+    deps:
+      - src/extract_neural_xlsr.py
+      - data/raw/ru-fr_interference/ru-fr_interference/2/wav_et_textgrids/FRcorp_textgrids_only
+    params:
+      - params.yaml:
+        - xlsr.model
+        - xlsr.layer_low
+        - xlsr.layer_mid
+        - xlsr.layer_high
+        - xlsr.sample_rate
+        - xlsr.hop_length
+    outs:
+      - data/processed/features_xlsr.npz
+
+  normalise:
+    cmd: python src/normalise.py
+    deps:
+      - src/normalise.py
+      - data/processed/features_acoustic.csv
+      - data/processed/features_whisper.npz
+      - data/processed/features_xlsr.npz
+    params:
+      - params.yaml:
+        - normalise.pca_components_visual
+        - normalise.pca_components_cluster
+        - normalise.umap_n_components
+        - normalise.umap_n_neighbors
+        - normalise.umap_min_dist
+    outs:
+      - data/processed/features_acoustic_norm.csv
+      - data/processed/features_whisper_pca_low.npz
+      - data/processed/features_whisper_pca_high.npz
+      - data/processed/features_xlsr_pca_low.npz
+      - data/processed/features_xlsr_pca_mid.npz
+      - data/processed/features_xlsr_pca_high.npz
+
+  analyse:
+    cmd: python src/analyse.py
+    deps:
+      - src/analyse.py
+      - data/processed/features_acoustic_norm.csv
+      - data/processed/features_whisper_pca_low.npz
+      - data/processed/features_whisper_pca_high.npz
+      - data/processed/features_xlsr_pca_low.npz
+      - data/processed/features_xlsr_pca_mid.npz
+      - data/processed/features_xlsr_pca_high.npz
+    outs:
+      - results/figures
+      - results/tables

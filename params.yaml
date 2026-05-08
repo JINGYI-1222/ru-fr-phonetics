@@ -1,0 +1,37 @@
+# ── Corpus ────────────────────────────────────────────────────────────────────
+corpus:
+  raw_dir: data/raw/ru-fr_interference/ru-fr_interference/2
+  corpus_dir: data/raw/ru-fr_interference/ru-fr_interference/2/wav_et_textgrids/FRcorp_textgrids_only
+  metadata: data/raw/ru-fr_interference/ru-fr_interference/2/metadata_RUFR.csv
+
+# ── Acoustic extraction ───────────────────────────────────────────────────────
+acoustics:
+  max_formant_female: 5000
+  max_formant_male: 4500
+  n_formants: 5
+  window_length: 0.025
+  time_step: 0.01
+
+# ── Neural extraction ─────────────────────────────────────────────────────────
+whisper:
+  model: openai/whisper-medium
+  layer_low: 4
+  layer_high: 20
+  sample_rate: 16000
+  hop_length: 160
+
+xlsr:
+  model: facebook/wav2vec2-large-xlsr-53
+  layer_low: 4
+  layer_mid: 12
+  layer_high: 20
+  sample_rate: 16000
+  hop_length: 320
+
+# ── Normalisation ─────────────────────────────────────────────────────────────
+normalise:
+  pca_components_visual: 2
+  pca_components_cluster: 50
+  umap_n_components: 2
+  umap_n_neighbors: 15
+  umap_min_dist: 0.1

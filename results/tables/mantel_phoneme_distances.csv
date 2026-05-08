@@ -1,0 +1,15 @@
+RSM1,RSM2,r,p,sig
+Euclidean,Whisper_L4,0.3682,0.046,*
+Mahalanobis,Whisper_L4,0.3079,0.114,ns
+Euclidean,Whisper_L20,0.3001,0.088,ns
+Mahalanobis,Whisper_L20,0.2455,0.219,ns
+Euclidean,XLSR_L4,0.7003,0.0,***
+Mahalanobis,XLSR_L4,0.6436,0.0,***
+Euclidean,XLSR_L12,0.5872,0.001,**
+Mahalanobis,XLSR_L12,0.5474,0.0,***
+Euclidean,XLSR_L20,0.6112,0.001,**
+Mahalanobis,XLSR_L20,0.5736,0.001,**
+Whisper_L4,Whisper_L20,0.4644,0.011,*
+XLSR_L4,XLSR_L12,0.9047,0.0,***
+XLSR_L12,XLSR_L20,0.9379,0.0,***
+Whisper_L20,XLSR_L12,0.0819,0.666,ns

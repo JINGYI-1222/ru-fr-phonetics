@@ -1,0 +1,10 @@
+RSM1,RSM2,r,p,sig
+Acoustic,Whisper L4,-0.0551,0.004,**
+Acoustic,Whisper L20,0.0351,0.06,ns
+Acoustic,XLS-R L4,0.1633,0.0,***
+Acoustic,XLS-R L12,0.2449,0.0,***
+Acoustic,XLS-R L20,0.1395,0.0,***
+Whisper L4,Whisper L20,0.5194,0.0,***
+XLS-R L4,XLS-R L12,0.6905,0.0,***
+XLS-R L12,XLS-R L20,0.6996,0.0,***
+Whisper L20,XLS-R L12,0.1107,0.0,***

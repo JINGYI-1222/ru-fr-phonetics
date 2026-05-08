@@ -1,0 +1,3 @@
+formant,mean_m,mean_f,test,stat,p
+F1_lob,-0.0,-0.0,Mann-Whitney U,49.0,0.775051
+F2_lob,0.0,-0.0,Mann-Whitney U,48.0,0.838256

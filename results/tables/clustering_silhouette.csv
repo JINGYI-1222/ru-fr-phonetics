@@ -1,0 +1,9 @@
+representation,k,silhouette
+Acoustic,2,0.358
+Acoustic,3,0.4206
+Acoustic,4,0.3973
+Acoustic,5,0.3899
+XLSR_L12,2,0.2762
+XLSR_L12,3,0.2645
+XLSR_L12,4,0.2249
+XLSR_L12,5,0.2236
